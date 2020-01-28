@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 
 const resolver = require('./graphql/resolvers/index')
 const schema = require('./graphql/schema/index')
+const isAuth = require('./middleware/is-auth')
 
 
 mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0-neupe.mongodb.net/${process.env.MONGO_DATABASE}?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true  } )
@@ -19,7 +20,7 @@ mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PA
 })
 
 const app = express();
-
+app.use(isAuth)
 app.use(bodyParser.json());
 
 app.use('/graphql',

@@ -49,7 +49,7 @@ module.exports = {
       );
 
       return {
-        userID: user.id,
+        userId: user.id,
         token: token,
         tokenExpiration: 1
       }

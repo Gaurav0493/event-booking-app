@@ -34,7 +34,7 @@ class AuthPage extends Component {
       query: `
         query {
           login(email: "${email}", password: "${password}") {
-            userID
+            userId
             token
             tokenExpiration
           }

@@ -125,12 +125,23 @@ class EventsPage extends Component {
             </form>
           </Modal>
         )}
-        <div className="events-control">
+      { this.context.token && (<div className="events-control">
           <p>Share your own Events!</p>
           <button className="btn" onClick={this.startCreateEventHandler}>
             Create Event
-          </button>
-        </div>
+          </button> 
+        </div>)}
+        <ul className="events__list" >
+          <li className="events__list-item">
+            Test
+          </li>
+          <li className="events__list-item">
+            Test
+          </li>
+          <li className="events__list-item">
+            Test
+          </li>
+        </ul>
       </React.Fragment>
     );
   }
